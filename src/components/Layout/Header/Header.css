@@ -1,0 +1,10 @@
+.Header-container {
+    width: 100%;
+    height: 70px;
+    background-color: dimgrey;
+}
+
+.App-logo {
+    height: 50px;
+    padding: 10px;
+}
