@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import axios from 'axios'
 import Person from '../../components/Person/Person'
 import Header from "../../components/Layout/Header/Header";
+import './PersonList.css';
+
 
 class PersonList extends Component {
 
@@ -20,20 +22,24 @@ class PersonList extends Component {
 
     render() {
         const persons = this.state.persons.map(person => {
-            return <Person
-                key={person.id}
-                name={person.name}
-                company = {person.org_id.name}
-            />
+            return <div className="Persons">
+                <Person
+                    key={person.id}
+                    name={person.name}
+                    company={person.org_id.name}
+                />
+            </div>
         });
-        console.log(persons);
+
         return (
-          <div>
-              <Header/>
-              <section className="Persons">
-                  {persons}
-              </section>
-          </div>
+            <div className="Wrapper">
+                <Header/>
+                <div className="Breadcrumb">
+                    <h3 className="Breadcrumb-text">People's List</h3>
+                    <hr/>
+                </div>
+                {persons}
+            </div>
         );
     }
 

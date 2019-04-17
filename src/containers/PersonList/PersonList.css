@@ -1,7 +1,13 @@
 .Persons {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    width: 80%;
-    margin: auto;
+    width: auto;
+    border: 1px solid rgba(5,8,4,0.31);
+    margin: 20px;
+}
+
+.Breadcrumb-text {
+    padding: 10px;
+}
+
+.Wrapper {
+   /* padding: 20px 150px 20px 150px; */
 }
