@@ -5,9 +5,16 @@
 }
 
 .Breadcrumb-text {
-    padding: 10px;
+    margin: 30px;
 }
 
 .Wrapper {
    /* padding: 20px 150px 20px 150px; */
+}
+.list-group-item {
+    margin: 10px;
+}
+
+.list-group-item:hover {
+    background-color: rgba(49, 42, 45, 0.13);
 }
