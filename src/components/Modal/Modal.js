@@ -12,12 +12,14 @@ class PersonModal extends React.Component {
 
 
     render() {
-        return <Modal show={this.props.show} onHide={this.props.handleClose}
-                      aria-labelledby="contained-modal-title-vcenter"
-                      centered>
+        return (
+
+            <Modal show={this.props.show} onHide={this.props.handleClose} aria-labelledby="contained-modal-title-vcenter" centered>
+
             <Modal.Header closeButton style={{backgroundColor: '#dee2e6'}}>
                 <h6><b>Person Information</b></h6>
             </Modal.Header>
+
             <Modal.Body>
                 <Container style={{marginBottom: 100 + 'px'}}>
 
@@ -39,7 +41,7 @@ class PersonModal extends React.Component {
                         </Col>
                     </Row>
 
-                    <hr></hr>
+                    <hr/>
 
                     <Row style={{marginTop:30 + 'px'}}>
                         <Col md={4}>
@@ -83,18 +85,21 @@ class PersonModal extends React.Component {
 
                     <Row>
                         <Col>
-                            <button type="button" className="btn btn-danger btn-block" onClick={this.props.onDelete}>Delete</button>
+                            <button type="button" className="btn btn-danger btn-block" onClick={() => {this.props.onDelete(); this.props.handleClose()}}>Delete</button>
                         </Col>
                     </Row>
 
                 </Container>
             </Modal.Body>
+
             <Modal.Footer style={{backgroundColor: '#dee2e6'}}>
                 <Button variant="light" onClick={this.props.handleClose}>
                     Back
                 </Button>
             </Modal.Footer>
+
         </Modal>
+        )
     }
 }
 

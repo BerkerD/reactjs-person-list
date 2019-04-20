@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fadf5933-6815-4561-8ab9-aaeba498fdde" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Layout/Breadcrumb/Breadcrumb.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Layout/Breadcrumb/Breadcrumb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Layout/ProfilePicture/ProfilePicture.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Layout/ProfilePicture/ProfilePicture.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Modal/Modal.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Modal/Modal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout/Footer/Footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Footer/Footer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Layout/Footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/Footer/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Person/Person.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Person/Person.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Person/Person.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Person/Person.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/PersonList/PersonList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/PersonList/PersonList.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Layout/ProfilePicture/ProfilePicture.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Layout/ProfilePicture/ProfilePicture.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modal/Modal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Modal/Modal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/PersonList/PersonList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/PersonList/PersonList.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
@@ -30,15 +18,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/containers/PersonList/PersonList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="151" column="106" selection-start-line="151" selection-start-column="106" selection-end-line="151" selection-end-column="106" />
+            <state relative-caret-position="259">
+              <caret line="83" column="36" selection-start-line="83" selection-start-column="36" selection-end-line="83" selection-end-column="36" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
-                <element signature="e#315#569#0" />
-                <element signature="e#2869#3464#0" />
+                <element signature="e#1507#2137#0" />
+                <element signature="e#4771#5480#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Modal/Modal.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="80" column="53" lean-forward="true" selection-start-line="80" selection-start-column="53" selection-end-line="80" selection-end-column="53" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -47,58 +47,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Layout/ProfilePicture/ProfilePicture.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="58" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="58" />
+            <state relative-caret-position="102">
+              <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/Modal/Modal.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="7" column="67" selection-start-line="7" selection-start-column="67" selection-end-line="7" selection-end-column="67" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Person/Person.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="17" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/PersonList/PersonList.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Layout/ProfilePicture/ProfilePicture.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="13" lean-forward="true" selection-start-column="1" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Person/Person.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -143,11 +95,11 @@
         <option value="$PROJECT_DIR$/src/components/Layout/Footer/Footer.css" />
         <option value="$PROJECT_DIR$/src/components/Layout/Pagination/Pagination.js" />
         <option value="$PROJECT_DIR$/src/components/Layout/ProfilePicture/ProfilePicture.css" />
-        <option value="$PROJECT_DIR$/src/components/Layout/ProfilePicture/ProfilePicture.js" />
         <option value="$PROJECT_DIR$/src/components/Person/Person.js" />
         <option value="$PROJECT_DIR$/src/components/Person/Person.css" />
-        <option value="$PROJECT_DIR$/src/containers/PersonList/PersonList.js" />
         <option value="$PROJECT_DIR$/src/components/Modal/Modal.js" />
+        <option value="$PROJECT_DIR$/src/components/Layout/ProfilePicture/ProfilePicture.js" />
+        <option value="$PROJECT_DIR$/src/containers/PersonList/PersonList.js" />
       </list>
     </option>
   </component>
@@ -173,11 +125,6 @@
             <path>
               <item name="pipedrive-task" type="b2602c69:ProjectViewProjectNode" />
               <item name="pipedrive-task" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pipedrive-task" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pipedrive-task" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -192,14 +139,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="Layout" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pipedrive-task" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pipedrive-task" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Layout" type="462c0819:PsiDirectoryNode" />
-              <item name="ProfilePicture" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pipedrive-task" type="b2602c69:ProjectViewProjectNode" />
@@ -207,13 +146,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="Modal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pipedrive-task" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pipedrive-task" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Person" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pipedrive-task" type="b2602c69:ProjectViewProjectNode" />
@@ -276,12 +208,12 @@
       <option name="presentableId" value="Default" />
       <updated>1555191438661</updated>
       <workItem from="1555191441114" duration="4776000" />
-      <workItem from="1555494907098" duration="81293000" />
+      <workItem from="1555494907098" duration="83841000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86069000" />
+    <option name="totallyTimeSpent" value="88617000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="85" y="-8" width="1843" height="1096" extended-state="6" />
@@ -301,7 +233,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.29698858" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.29698858" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -502,28 +434,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/PersonList/PersonList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="151" column="106" selection-start-line="151" selection-start-column="106" selection-end-line="151" selection-end-column="106" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#315#569#0" />
-            <element signature="e#2869#3464#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Layout/ProfilePicture/ProfilePicture.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="58" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Person/Person.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -536,8 +446,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Modal/Modal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="7" column="67" selection-start-line="7" selection-start-column="67" selection-end-line="7" selection-end-column="67" />
+        <state relative-caret-position="238">
+          <caret line="80" column="53" lean-forward="true" selection-start-line="80" selection-start-column="53" selection-end-line="80" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Layout/ProfilePicture/ProfilePicture.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/PersonList/PersonList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="83" column="36" selection-start-line="83" selection-start-column="36" selection-end-line="83" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#1507#2137#0" />
+            <element signature="e#4771#5480#0" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -37,7 +37,7 @@ class PersonList extends Component {
     // REST Functions //
 
     getAllPeople = () => {
-            axios.get('https://api.pipedrive.com/v1/persons?start=0&api_token=44f0803b7d92bcff53197ace84ccc3c4fd01c89d')
+        axios.get('https://api.pipedrive.com/v1/persons?start=0&api_token=44f0803b7d92bcff53197ace84ccc3c4fd01c89d')
             .then(response => {
                 const result = response.data.data;
                 this.setState({people: result});
@@ -48,10 +48,6 @@ class PersonList extends Component {
         axios.get('https://api.pipedrive.com/v1/persons/' + id + '?api_token=44f0803b7d92bcff53197ace84ccc3c4fd01c89d')
             .then(response => {
                 const result = response.data.data;
-                let avatar;
-                if (result.picture_id != null) {
-                    avatar = result.picture_id.pictures["128"];
-                }
                 this.setState(prevState => ({
                     personDetails: {
                         ...prevState.personDetails,
@@ -62,7 +58,7 @@ class PersonList extends Component {
                         organization: result.org_id.name,
                         group: result["869937ae55130033aaf282aa7a027a588a6a2c48"],
                         location: result["72cb5f4871b990ea8829611f9ab85bbe722961df_formatted_address"],
-                        image: avatar,
+                        image: result.picture_id ? result.picture_id.pictures["128"] : undefined,
                         first_char: result.first_char
                     }
                 }));
@@ -72,6 +68,9 @@ class PersonList extends Component {
     deletePersonById = (id) => {
         axios.delete('https://api.pipedrive.com/v1/persons/' + id + '?api_token=44f0803b7d92bcff53197ace84ccc3c4fd01c89d')
             .then(response => {
+                if (response) {
+                    this.getAllPeople()
+                }
             });
     };
 
@@ -82,16 +81,14 @@ class PersonList extends Component {
 
     peopleSelectedHandler = (id) => {
         this.getPersonById(id);
-        this.showModal();
+        setTimeout(this.showModal, 100);
     };
 
     personDeleteHandler = (id) => {
         this.deletePersonById(id);
-        this.getAllPeople()
     };
 
     // --------------------------- //
-
 
 
     // Modal Functions //
@@ -140,15 +137,10 @@ class PersonList extends Component {
     // -------------------------------------//
 
 
-
     render() {
 
         const person = this.state.people.map((person, idx) => {
 
-            let avatar;
-            if (person.picture_id != null) {
-                avatar = person.picture_id.pictures["128"];
-            }
             return <li key={person.id} onDragOver={() => this.onDragOver(idx)} className="Person-list-item">
                 <div className="Drag"
                      draggable
@@ -158,7 +150,7 @@ class PersonList extends Component {
                         name={person.name}
                         company={person.org_id.name}
                         first_char={person.first_char}
-                        image={avatar}
+                        image={person.pictureId ? person.picture_id.pictures["128"] : undefined}
                         clicked={() => this.peopleSelectedHandler(person.id)}
                     />
                 </div>
