@@ -1,0 +1,12 @@
+.Person-image {
+    margin-top: 15px;
+    border-radius: 50px;
+    float: right;
+}
+
+.Person-image-modal {
+    border-radius: 50px;
+    display: table;
+    margin: 20px auto 20px auto;
+}
+

@@ -1,16 +1,9 @@
-.Persons {
+.people {
     width: auto;
     border: 1px solid rgba(5,8,4,0.31);
     margin: 20px;
 }
 
-.Breadcrumb-text {
-    margin: 30px;
-}
-
-.Wrapper {
-   /* padding: 20px 150px 20px 150px; */
-}
 .list-group-item {
     margin: 10px;
 }
