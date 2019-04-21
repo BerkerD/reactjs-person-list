@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PersonList from "./containers/PersonList/PersonList";
+import PersonList from "./containers/PersonContainer/PersonContainer";
 import Container from "react-bootstrap/Container";
 import Header from "./components/Layout/Header/Header";
 import Breadcrumb from "./components/Layout/Breadcrumb/Breadcrumb"

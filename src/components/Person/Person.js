@@ -6,7 +6,7 @@ import {faBuilding} from '@fortawesome/free-solid-svg-icons'
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-import ProfilePicture from "../Layout/ProfilePicture/ProfilePicture";
+import ProfilePicture from "../ProfilePicture/ProfilePicture";
 
 class Person extends React.Component {
 

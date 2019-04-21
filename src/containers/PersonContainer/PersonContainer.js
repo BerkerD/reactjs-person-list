@@ -2,13 +2,15 @@ import React, {Component} from 'react';
 import axios from 'axios'
 import Person from '../../components/Person/Person'
 import Modal from "../../components/Modal/Modal";
+import Search from "../../components/Search/Search"
 
-import './PersonList.css';
+import './PersonContainer.css';
 
 
 class PersonList extends Component {
 
     state = {
+        filterText: '',
         people: [],
         show: false,
         personDetails: {
@@ -25,9 +27,15 @@ class PersonList extends Component {
         }
     };
 
+    filterUpdate = (value) => {
+        this.setState({
+            filterText: value
+        })
+    }
+
     // Lifecycle Methods //
 
-    componentDidMount() {
+    componentDidMount = () => {
         this.getAllPeople()
     }
 
@@ -40,7 +48,9 @@ class PersonList extends Component {
         axios.get('https://api.pipedrive.com/v1/persons?start=0&api_token=44f0803b7d92bcff53197ace84ccc3c4fd01c89d')
             .then(response => {
                 const result = response.data.data;
-                this.setState({people: result});
+                this.setState({
+                    people: result,
+                });
             });
     };
 
@@ -77,7 +87,7 @@ class PersonList extends Component {
     // --------------------------- //
 
 
-    // Click Handler Functions //
+    // Handler Functions //
 
     peopleSelectedHandler = (id) => {
         this.getPersonById(id);
@@ -87,6 +97,7 @@ class PersonList extends Component {
     personDeleteHandler = (id) => {
         this.deletePersonById(id);
     };
+
 
     // --------------------------- //
 
@@ -138,28 +149,32 @@ class PersonList extends Component {
 
 
     render() {
-
-        const person = this.state.people.map((person, idx) => {
-
-            return <li key={person.id} onDragOver={() => this.onDragOver(idx)} className="Person-list-item">
-                <div className="Drag"
-                     draggable
-                     onDragStart={e => this.onDragStart(e, idx)}
-                     onDragEnd={this.onDragEnd}>
-                    <Person
-                        name={person.name}
-                        company={person.org_id.name}
-                        first_char={person.first_char}
-                        image={person.pictureId ? person.picture_id.pictures["128"] : undefined}
-                        clicked={() => this.peopleSelectedHandler(person.id)}
-                    />
-                </div>
-            </li>
+        const person = this.state.people
+            .filter(person => {
+                return person.name.toLowerCase().indexOf(this.state.filterText.toLowerCase()) >= 0
+            })
+        .map((person, idx) => {
+            return (
+                <li key={person.id} onDragOver={() => this.onDragOver(idx)} className="Person-list-item">
+                    <div className="Drag"
+                         draggable
+                         onDragStart={e => this.onDragStart(e, idx)}
+                         onDragEnd={this.onDragEnd}>
+                        <Person
+                            name={person.name}
+                            company={person.org_id.name}
+                            first_char={person.first_char}
+                            image={person.pictureId ? person.picture_id.pictures["128"] : undefined}
+                            clicked={() => this.peopleSelectedHandler(person.id)}
+                        />
+                    </div>
+                </li>
+            )
         });
 
         return (
-            <div>
-                <Modal
+            <div>   
+                 <Modal
                     show={this.state.show}
                     handleClose={this.hideModal}
                     name={this.state.personDetails.name}
@@ -171,6 +186,10 @@ class PersonList extends Component {
                     image={this.state.personDetails.image}
                     first_char={this.state.personDetails.first_char}
                     onDelete={() => this.personDeleteHandler(this.state.personDetails.id)}
+                />
+                <Search
+                    filterText = {this.state.filterText }
+                    filterUpdate = {this.filterUpdate.bind(this)}
                 />
                 <ul style={{padding: 0}}>
                     {person}
