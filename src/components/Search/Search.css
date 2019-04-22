@@ -1,11 +1,11 @@
-.Search-input{
+.Search-input {
     background: transparent;
     border: none;
     padding: 7px;
     width: 100%;
 }
 
-.Search-form{
+.Search-form {
     margin-bottom: 20px;
     border: 1px solid rgb(202, 202, 202);
     border-radius: 30px;
