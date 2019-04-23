@@ -8,31 +8,26 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import ProfilePicture from "../ProfilePicture/ProfilePicture";
 
-class Person extends React.Component {
 
-    shouldComponentUpdate(nextProps, nextState, nextContext) {
-        const differentName = this.props.name !== nextProps.name;
-        return differentName
-    }
-    
-    render() {
-        return <article className="Person" onClick={this.props.clicked}>
+const Person = (props) => {
+    return (
+        <div className="Person" onClick={props.clicked}>
             <Container>
                 <Row>
                     <Col>
-                        <p style={{ marginBottom: 0 + 'px', marginTop: 1 + 'rem' }}><b>{this.props.name}</b></p>
+                        <p style={{ marginBottom: 0 + 'px', marginTop: 1 + 'rem' }}><b>{props.name}</b></p>
                         <div className="Organization-wrapper">
                             <FontAwesomeIcon className="Organization-icon" icon={faBuilding} />
-                            <p>{this.props.company}</p>
+                            <p>{props.company}</p>
                         </div>
                     </Col>
                     <Col>
-                        <ProfilePicture image={this.props.image} first_char={this.props.first_char} class={"Person-image"} />
+                        <ProfilePicture image={props.image} first_char={props.first_char} class={"Person-image"} />
                     </Col>
                 </Row>
             </Container>
-        </article>
-    }
+        </div>
+    )
 }
 
 export default Person;

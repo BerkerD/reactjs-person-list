@@ -35,6 +35,11 @@ class PersonContainer extends Component {
         })
     }
 
+    peopleUpdate = (people) => {
+        this.setState({
+            people: people
+        })
+    }
 
     getAllPeople = () => {
         axios.get('https://api.pipedrive.com/v1/persons?start=0&api_token=44f0803b7d92bcff53197ace84ccc3c4fd01c89d')
@@ -85,6 +90,34 @@ class PersonContainer extends Component {
         this.deletePersonById(id);
     };
 
+    onDragStart = (e, index) => {
+        this.draggedItem = this.state.people[index];
+        e.dataTransfer.effectAllowed = "move";
+        e.dataTransfer.setData("text/html", e.target.parentNode);
+        e.dataTransfer.setDragImage(e.target.parentNode, 20, 20);
+    };
+
+    onDragOver = index => {
+        const draggedOverItem = this.state.people[index];
+
+        // if the item is dragged over itself, ignore
+        if (this.draggedItem === draggedOverItem) {
+            return;
+        }
+
+        // filter out the currently dragged item
+        let people = this.state.people.filter(item => item !== this.draggedItem);
+
+        // add the dragged item after the dragged over item
+        people.splice(index, 0, this.draggedItem);
+
+        this.setState({ people })
+    };
+
+    onDragEnd = () => {
+        this.draggedIdx = null;
+    };
+
     showModal = () => {
         this.setState({ show: true });
     };
@@ -93,16 +126,21 @@ class PersonContainer extends Component {
         this.setState({ show: false });
     };
 
-    peopleUpdate = (people) => {
-        this.setState({
-            people: people
-        })
-    }
-
     render() {
 
         return (
             <div>
+                <Search filterUpdate={this.filterUpdate.bind(this)}/>
+                <ul style={{ padding: 0 }}>
+                    <PersonList
+                        people={this.state.people}
+                        filterText={this.state.filterText}
+                        personSelectHandler={this.personSelectHandler}
+                        onDragStart={this.onDragStart}
+                        onDragEnd={this.onDragEnd}
+                        onDragOver={this.onDragOver}
+                    />
+                </ul>
                 <Modal
                     show={this.state.show}
                     handleClose={this.hideModal}
@@ -116,18 +154,6 @@ class PersonContainer extends Component {
                     first_char={this.state.personDetails.first_char}
                     onDelete={() => this.personDeleteHandler(this.state.personDetails.id)}
                 />
-                <Search
-                    filterText={this.state.filterText}
-                    filterUpdate={this.filterUpdate.bind(this)}
-                />
-                <ul style={{ padding: 0 }}>
-                    <PersonList
-                        filterText={this.state.filterText}
-                        people={this.state.people}
-                        peopleUpdate={this.peopleUpdate.bind(this)}
-                        personSelectHandler={this.personSelectHandler}
-                    />
-                </ul>
             </div>
         );
     }
