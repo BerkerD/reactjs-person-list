@@ -2,8 +2,10 @@ import React from 'react'
 import Person from '../Person/Person'
 
 const PersonList = (props) => (
-
-   props.people.filter(person => {
+    
+    props.people
+    .slice((props.currentPage * 5), (5 + props.currentPage * 5))
+    .filter(person => {
         return person.name.toLowerCase().indexOf(props.filterText.toLowerCase()) >= 0
     }).map((person, idx) => {
         return (

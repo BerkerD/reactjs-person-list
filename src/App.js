@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <Container>
         <Header />
-        <Breadcrumb title={"Person Title"} />      
+        <Breadcrumb title={"People's List"} />      
         <PersonListContainer />
         <Footer />
       </Container>

@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import Modal from "../../components/Modal/Modal";
+    ;
 import PersonList from "../../components/PersonList/PersonList"
 import Search from "../../components/Search/Search"
 import './PersonListContainer.css';
 
+import Modal from "../../components/Modal/Modal"
+import Pagination from '../../components/Pagination/Pagination';
+
+
 class PersonContainer extends Component {
 
     state = {
+        totalPage: null,
+        currentPage: 0,
         filterText: '',
         people: [],
         show: false,
@@ -29,6 +35,11 @@ class PersonContainer extends Component {
         this.getAllPeople()
     }
 
+    calculateTotalPageNumber = (personList) => {
+        const totalPage = personList.length / 5;
+        this.setState({totalPage: totalPage})
+    }
+
     filterUpdate = (value) => {
         this.setState({
             filterText: value
@@ -45,6 +56,7 @@ class PersonContainer extends Component {
         axios.get('https://api.pipedrive.com/v1/persons?start=0&api_token=44f0803b7d92bcff53197ace84ccc3c4fd01c89d')
             .then(response => {
                 const result = response.data.data;
+                this.calculateTotalPageNumber(result)
                 this.setState({
                     people: result,
                 });
@@ -126,13 +138,26 @@ class PersonContainer extends Component {
         this.setState({ show: false });
     };
 
+    previousPage = () => {
+        if (this.state.currentPage !== 0)
+            this.setState((prevState) => ({ currentPage: (prevState.currentPage - 1) }))
+    }
+
+    nextPage = () => {
+        if (this.state.currentPage + 1 < this.state.totalPage)
+            this.setState((prevState) => ({ currentPage: (prevState.currentPage + 1) }))
+
+    }
+
+
     render() {
 
         return (
             <div>
-                <Search filterUpdate={this.filterUpdate.bind(this)}/>
+                <Search filterUpdate={this.filterUpdate.bind(this)} />
                 <ul style={{ padding: 0 }}>
                     <PersonList
+                        currentPage={this.state.currentPage}
                         people={this.state.people}
                         filterText={this.state.filterText}
                         personSelectHandler={this.personSelectHandler}
@@ -154,6 +179,14 @@ class PersonContainer extends Component {
                     first_char={this.state.personDetails.first_char}
                     onDelete={() => this.personDeleteHandler(this.state.personDetails.id)}
                 />
+
+                <Pagination
+                    previousPage={this.previousPage}
+                    nextPage={this.nextPage}
+                    currentPage={this.state.currentPage}
+                />
+
+
             </div>
         );
     }
