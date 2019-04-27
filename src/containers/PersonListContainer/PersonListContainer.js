@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import axios from 'axios'
-    ;
+import axios from 'axios';
 import PersonList from "../../components/PersonList/PersonList"
 import Search from "../../components/Search/Search"
 import './PersonListContainer.css';
-
-import Modal from "../../components/Modal/Modal"
+import Breadcrumb from "../../components/Layout/Breadcrumb/Breadcrumb"
+import PersonDetailsModal from "../../components/Modal/PersonDetailsModal/PersonDetailsModal"
 import Pagination from '../../components/Pagination/Pagination';
 
 
@@ -37,18 +36,12 @@ class PersonContainer extends Component {
 
     calculateTotalPageNumber = (personList) => {
         const totalPage = personList.length / 5;
-        this.setState({totalPage: totalPage})
+        this.setState({ totalPage: totalPage })
     }
 
     filterUpdate = (value) => {
         this.setState({
             filterText: value
-        })
-    }
-
-    peopleUpdate = (people) => {
-        this.setState({
-            people: people
         })
     }
 
@@ -154,6 +147,7 @@ class PersonContainer extends Component {
 
         return (
             <div>
+                <Breadcrumb title={"People's List"} />
                 <Search filterUpdate={this.filterUpdate.bind(this)} />
                 <ul style={{ padding: 0 }}>
                     <PersonList
@@ -166,7 +160,7 @@ class PersonContainer extends Component {
                         onDragOver={this.onDragOver}
                     />
                 </ul>
-                <Modal
+                <PersonDetailsModal
                     show={this.state.show}
                     handleClose={this.hideModal}
                     name={this.state.personDetails.name}

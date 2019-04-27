@@ -4,8 +4,8 @@ import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import './Modal.css';
-import ProfilePicture from "../ProfilePicture/ProfilePicture";
+import './PersonDetailsModal.css';
+import ProfilePicture from "../../ProfilePicture/ProfilePicture";
 
 
 
@@ -94,9 +94,7 @@ const PersonModal = (props) => {
             </Modal.Body>
 
             <Modal.Footer style={{ backgroundColor: '#dee2e6' }}>
-                <Button variant="light" onClick={props.handleClose}>
-                    Back
-            </Button>
+                <Button variant="light" onClick={props.handleClose}> Back </Button>
             </Modal.Footer>
 
         </Modal>
