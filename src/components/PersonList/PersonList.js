@@ -18,7 +18,7 @@ const PersonList = (props) => (
                         name={person.name}
                         company={person.org_id.name}
                         first_char={person.first_char}
-                        image={person.pictureId ? person.picture_id.pictures["128"] : undefined}
+                        image={person.picture_id ? person.picture_id.pictures["128"] : undefined }
                         clicked={() => props.personSelectHandler(person.id)}
                     />
                 </div>

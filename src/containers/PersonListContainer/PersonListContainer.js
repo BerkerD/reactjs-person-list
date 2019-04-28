@@ -46,7 +46,7 @@ class PersonContainer extends Component {
     }
 
     getAllPeople = () => {
-        axios.get('https://api.pipedrive.com/v1/persons?start=0&api_token=44f0803b7d92bcff53197ace84ccc3c4fd01c89d')
+        axios.get('https://api.pipedrive.com/v1/persons?start=0&api_token=218aded7efd16fa71a91a157f4d4bf8264933d97')
             .then(response => {
                 const result = response.data.data;
                 this.calculateTotalPageNumber(result)
@@ -57,7 +57,7 @@ class PersonContainer extends Component {
     };
 
     getPersonById = (id) => {
-        axios.get('https://api.pipedrive.com/v1/persons/' + id + '?api_token=44f0803b7d92bcff53197ace84ccc3c4fd01c89d')
+        axios.get('https://api.pipedrive.com/v1/persons/' + id + '?api_token=218aded7efd16fa71a91a157f4d4bf8264933d97')
             .then(response => {
                 const result = response.data.data;
                 this.setState(prevState => ({
@@ -68,8 +68,8 @@ class PersonContainer extends Component {
                         phone: result.phone[0].value,
                         email: result.email[0].value,
                         organization: result.org_id.name,
-                        group: result["869937ae55130033aaf282aa7a027a588a6a2c48"],
-                        location: result["72cb5f4871b990ea8829611f9ab85bbe722961df_formatted_address"],
+                        group: result["4d714c639922b8a5a22db835564884bec686722d"],
+                        location: result["f7c0a3852659c783f10cce7104c3f6a6daf5c3dc_formatted_address"],
                         image: result.picture_id ? result.picture_id.pictures["128"] : undefined,
                         first_char: result.first_char
                     }
@@ -78,7 +78,7 @@ class PersonContainer extends Component {
     };
 
     deletePersonById = (id) => {
-        axios.delete('https://api.pipedrive.com/v1/persons/' + id + '?api_token=44f0803b7d92bcff53197ace84ccc3c4fd01c89d')
+        axios.delete('https://api.pipedrive.com/v1/persons/' + id + '?api_token=218aded7efd16fa71a91a157f4d4bf8264933d97')
             .then(response => {
                 if (response) {
                     this.getAllPeople()
